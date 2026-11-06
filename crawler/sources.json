@@ -1,0 +1,444 @@
+{
+ "sources": [
+  {
+   "name": "SSC (Staff Selection Commission)",
+   "url": "https://ssc.gov.in"
+  },
+  {
+   "name": "Railway Recruitment Board (RRB)",
+   "url": "https://www.rrbapply.gov.in"
+  },
+  {
+   "name": "Central Selection Board of Constable, Bihar",
+   "url": "https://csbc.bihar.gov.in"
+  },
+  {
+   "name": "UP Police Recruitment & Promotion Board",
+   "url": "https://uppbpb.gov.in"
+  },
+  {
+   "name": "AP State Level Police Recruitment Board",
+   "url": "https://slprb.ap.gov.in"
+  },
+  {
+   "name": "State Level Police Recruitment Board, Assam",
+   "url": "https://slprbassam.in"
+  },
+  {
+   "name": "Maharashtra Police Recruitment",
+   "url": "https://www.mahapolice.gov.in/police-recru.php"
+  },
+  {
+   "name": "Rajasthan Recruitment Portal",
+   "url": "https://www.recruitment.rajasthan.gov.in"
+  },
+  {
+   "name": "UP Public Service Commission (UPPSC)",
+   "url": "https://uppsc.up.nic.in"
+  },
+  {
+   "name": "IBPS (Bank exams)",
+   "url": "https://www.ibps.in"
+  },
+  {
+   "name": "UPSC (Civil Services)",
+   "url": "https://upsconline.gov.in"
+  },
+  {
+   "name": "ISRO (Indian Space Research Organisation)",
+   "url": "https://www.isro.gov.in"
+  },
+  {
+   "name": "DRDO Recruitment (RAC)",
+   "url": "https://rac.gov.in"
+  },
+  {
+   "name": "ESIC (Employees' State Insurance Corporation)",
+   "url": "https://esic.gov.in"
+  },
+  {
+   "name": "AIIMS Common Recruitment Examination",
+   "url": "https://aiimsexams.ac.in"
+  },
+  {
+   "name": "Tamil Nadu Uniformed Services Recruitment Board (TNUSRB)",
+   "url": "https://www.tnusrb.tn.gov.in"
+  },
+  {
+   "name": "Karnataka State Police (KSP)",
+   "url": "https://ksp.karnataka.gov.in"
+  },
+  {
+   "name": "Gujarat Police Recruitment Board (GPRB)",
+   "url": "https://gprb.gujarat.gov.in"
+  },
+  {
+   "name": "Telangana Police Recruitment Board (TGPRB)",
+   "url": "https://www.tgprb.in"
+  },
+  {
+   "name": "Madhya Pradesh Police",
+   "url": "https://mppolice.gov.in"
+  },
+  {
+   "name": "Kerala Police",
+   "url": "https://www.keralapolice.gov.in"
+  },
+  {
+   "name": "Punjab Police",
+   "url": "https://www.punjabpolice.gov.in"
+  },
+  {
+   "name": "West Bengal Police Recruitment Board (WBPRB)",
+   "url": "https://prb.wb.gov.in"
+  },
+  {
+   "name": "Haryana Staff Selection Commission (HSSC)",
+   "url": "https://hssc.gov.in"
+  },
+  {
+   "name": "Odisha Police",
+   "url": "https://police.odisha.gov.in"
+  },
+  {
+   "name": "Chhattisgarh Police",
+   "url": "https://www.cgpolice.gov.in"
+  },
+  {
+   "name": "Jharkhand Police",
+   "url": "https://www.jhpolice.gov.in"
+  },
+  {
+   "name": "Himachal Pradesh Police (via HPPSC)",
+   "url": "https://www.hppsc.hp.gov.in"
+  },
+  {
+   "name": "Uttarakhand Police",
+   "url": "https://uttarakhandpolice.uk.gov.in"
+  },
+  {
+   "name": "Jammu & Kashmir Police",
+   "url": "https://www.jkpolice.gov.in"
+  },
+  {
+   "name": "Delhi Police",
+   "url": "https://delhipolice.gov.in"
+  },
+  {
+   "name": "Goa Police",
+   "url": "https://www.goapolice.gov.in"
+  },
+  {
+   "name": "Andaman & Nicobar Police",
+   "url": "https://police.andaman.gov.in"
+  },
+  {
+   "name": "Arunachal Pradesh Police",
+   "url": "https://arunpol.nic.in"
+  },
+  {
+   "name": "Chandigarh Police",
+   "url": "https://chandigarhpolice.nic.in"
+  },
+  {
+   "name": "Manipur Police",
+   "url": "https://manipurpolice.org"
+  },
+  {
+   "name": "Mizoram Police",
+   "url": "https://police.mizoram.gov.in"
+  },
+  {
+   "name": "Nagaland Police",
+   "url": "https://www.nagapol.gov.in"
+  },
+  {
+   "name": "Sikkim Police",
+   "url": "https://sikkimpolice.nic.in"
+  },
+  {
+   "name": "Tripura Police",
+   "url": "https://tripurapolice.gov.in"
+  },
+  {
+   "name": "Puducherry Police",
+   "url": "https://police.py.gov.in"
+  },
+  {
+   "name": "Join Indian Army",
+   "url": "https://joinindianarmy.nic.in"
+  },
+  {
+   "name": "Join Indian Navy",
+   "url": "https://www.joinindiannavy.gov.in"
+  },
+  {
+   "name": "Indian Air Force Recruitment",
+   "url": "https://indianairforce.nic.in"
+  },
+  {
+   "name": "Border Security Force (BSF) Recruitment",
+   "url": "https://rectt.bsf.gov.in"
+  },
+  {
+   "name": "Central Reserve Police Force (CRPF)",
+   "url": "https://rect.crpf.gov.in"
+  },
+  {
+   "name": "Central Industrial Security Force (CISF) Recruitment",
+   "url": "https://cisfrectt.cisf.gov.in"
+  },
+  {
+   "name": "Indo-Tibetan Border Police (ITBP) Recruitment",
+   "url": "https://recruitment.itbpolice.nic.in"
+  },
+  {
+   "name": "Sashastra Seema Bal (SSB) Recruitment",
+   "url": "https://recruitment.ssb.gov.in"
+  },
+  {
+   "name": "CTET (Central Teacher Eligibility Test)",
+   "url": "https://ctet.nic.in"
+  },
+  {
+   "name": "National Testing Agency (NTA)",
+   "url": "https://nta.ac.in"
+  },
+  {
+   "name": "Kendriya Vidyalaya Sangathan (KVS)",
+   "url": "https://kvsangathan.nic.in"
+  },
+  {
+   "name": "Navodaya Vidyalaya Samiti (NVS)",
+   "url": "https://navodaya.gov.in"
+  },
+  {
+   "name": "Delhi Subordinate Services Selection Board (DSSSB)",
+   "url": "https://dsssb.delhi.gov.in"
+  },
+  {
+   "name": "RBI Recruitment (Reserve Bank of India)",
+   "url": "https://opportunities.rbi.org.in"
+  },
+  {
+   "name": "EPFO (Employees' Provident Fund Organisation)",
+   "url": "https://www.epfindia.gov.in"
+  },
+  {
+   "name": "Department of Posts (India Post) Recruitment",
+   "url": "https://www.indiapost.gov.in"
+  },
+  {
+   "name": "LIC (Life Insurance Corporation) Recruitment",
+   "url": "https://licindia.in"
+  },
+  {
+   "name": "Madhya Pradesh Public Service Commission (MPPSC)",
+   "url": "https://mppsc.mp.gov.in"
+  },
+  {
+   "name": "Rajasthan Public Service Commission (RPSC)",
+   "url": "https://rpsc.rajasthan.gov.in"
+  },
+  {
+   "name": "Tamil Nadu Public Service Commission (TNPSC)",
+   "url": "https://www.tnpsc.gov.in"
+  },
+  {
+   "name": "Telangana State Public Service Commission (TSPSC)",
+   "url": "https://www.tspsc.gov.in"
+  },
+  {
+   "name": "Gujarat Public Service Commission (GPSC)",
+   "url": "https://gpsc.gujarat.gov.in"
+  },
+  {
+   "name": "Odisha Public Service Commission (OPSC)",
+   "url": "https://www.opsc.gov.in"
+  },
+  {
+   "name": "Jharkhand Public Service Commission (JPSC)",
+   "url": "https://www.jpsc.gov.in"
+  },
+  {
+   "name": "Maharashtra Public Service Commission (MPSC)",
+   "url": "https://mpsc.gov.in"
+  },
+  {
+   "name": "Bihar Public Service Commission (BPSC)",
+   "url": "https://bpsc.bih.nic.in"
+  },
+  {
+   "name": "Andhra Pradesh Public Service Commission (APPSC)",
+   "url": "https://psc.ap.gov.in"
+  },
+  {
+   "name": "West Bengal Public Service Commission (WBPSC)",
+   "url": "https://psc.wb.gov.in"
+  },
+  {
+   "name": "Haryana Public Service Commission (HPSC)",
+   "url": "https://hpsc.gov.in"
+  },
+  {
+   "name": "Jammu & Kashmir Public Service Commission (JKPSC)",
+   "url": "https://jkpsc.nic.in"
+  },
+  {
+   "name": "Chhattisgarh Public Service Commission (CGPSC)",
+   "url": "https://psc.cg.gov.in"
+  },
+  {
+   "name": "Kerala Public Service Commission",
+   "url": "https://www.keralapsc.gov.in"
+  },
+  {
+   "name": "Uttarakhand Public Service Commission (UKPSC)",
+   "url": "https://psc.uk.gov.in"
+  },
+  {
+   "name": "Punjab Public Service Commission (PPSC)",
+   "url": "https://ppsc.gov.in"
+  },
+  {
+   "name": "Karnataka Public Service Commission (KPSC)",
+   "url": "https://kpsc.kar.nic.in"
+  },
+  {
+   "name": "Assam Public Service Commission (APSC)",
+   "url": "https://apsc.nic.in"
+  },
+  {
+   "name": "Goa Public Service Commission (GPSC)",
+   "url": "https://gpsc.goa.gov.in"
+  },
+  {
+   "name": "Manipur Public Service Commission (MPSC)",
+   "url": "https://mpscmanipur.gov.in"
+  },
+  {
+   "name": "Meghalaya Public Service Commission (MPSC)",
+   "url": "https://mpsc.nic.in"
+  },
+  {
+   "name": "Mizoram Public Service Commission (MPSC)",
+   "url": "https://mpsc.mizoram.gov.in"
+  },
+  {
+   "name": "Nagaland Public Service Commission (NPSC)",
+   "url": "https://npsc.nagaland.gov.in"
+  },
+  {
+   "name": "Sikkim Public Service Commission (SPSC)",
+   "url": "https://spscskm.gov.in"
+  },
+  {
+   "name": "Tripura Public Service Commission (TPSC)",
+   "url": "https://tpsc.nic.in"
+  },
+  {
+   "name": "Arunachal Pradesh Public Service Commission (APPSC)",
+   "url": "https://appsc.gov.in"
+  },
+  {
+   "name": "BSSC (Bihar SSC)",
+   "url": "https://bssc.bihar.gov.in"
+  },
+  {
+   "name": "BPSSC (Bihar Police SC)",
+   "url": "https://bpssc.bihar.gov.in"
+  },
+  {
+   "name": "UPSSSC",
+   "url": "https://upsssc.gov.in"
+  },
+  {
+   "name": "JSSC",
+   "url": "https://www.jssc.nic.in"
+  },
+  {
+   "name": "RSMSSB",
+   "url": "https://rsmssb.rajasthan.gov.in"
+  },
+  {
+   "name": "MP ESB (Vyapam)",
+   "url": "https://esb.mp.gov.in"
+  },
+  {
+   "name": "OJAS Gujarat",
+   "url": "https://ojas.gujarat.gov.in"
+  },
+  {
+   "name": "OSSC (Odisha)",
+   "url": "https://ossc.gov.in"
+  },
+  {
+   "name": "WBSSC",
+   "url": "https://www.wbssc.gov.in"
+  },
+  {
+   "name": "JKSSB",
+   "url": "https://www.jkssb.nic.in"
+  },
+  {
+   "name": "SBI Careers",
+   "url": "https://sbi.co.in/web/careers"
+  },
+  {
+   "name": "India Post GDS",
+   "url": "https://indiapostgdsonline.gov.in"
+  },
+  {
+   "name": "Agniveer Vayu (Air Force)",
+   "url": "https://agnipathvayu.cdac.in"
+  },
+  {
+   "name": "Indian Coast Guard",
+   "url": "https://joinindiancoastguard.cdac.in"
+  },
+  {
+   "name": "FCI",
+   "url": "https://fci.gov.in"
+  },
+  {
+   "name": "UPSC",
+   "url": "https://upsc.gov.in"
+  },
+  {
+   "name": "National Career Service",
+   "url": "https://www.ncs.gov.in"
+  },
+  {
+   "name": "Employment News",
+   "url": "https://employmentnews.gov.in"
+  },
+  {
+   "name": "Bihar Board (BSEB)",
+   "url": "https://biharboardonline.bihar.gov.in"
+  },
+  {
+   "name": "UP Board (UPMSP)",
+   "url": "https://upmsp.edu.in"
+  },
+  {
+   "name": "CBSE Result",
+   "url": "https://results.cbse.nic.in"
+  },
+  {
+   "name": "PIB (sarkari ghoshna)",
+   "url": "https://pib.gov.in"
+  },
+  {
+   "name": "BPSC",
+   "url": "https://www.bpsc.bihar.gov.in"
+  },
+  {
+   "name": "Delhi Police",
+   "url": "https://www.delhipolice.gov.in"
+  },
+  {
+   "name": "AIIMS",
+   "url": "https://www.aiimsexams.ac.in"
+  }
+ ]
+}
