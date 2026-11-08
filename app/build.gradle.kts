@@ -41,4 +41,5 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.9.0")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("com.google.android.gms:play-services-ads:23.3.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 }
