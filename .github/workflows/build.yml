@@ -3,7 +3,6 @@ name: Build APK
 on:
   push:
     branches: [ main, master ]
-    # crawler / data / search page badalne par APK dobara nahi banega
     paths-ignore:
       - 'docs/**'
       - 'data/**'
@@ -16,19 +15,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # Android app source is bundled in the repository's AI Studio archive.
+      - name: Restore Android app module
+        run: |
+          mkdir -p /tmp/narad-source
+          unzip -q public/assets/aistudio/Ab-main__5__443fd235.zip 'Ab-main/app/*' -d /tmp/narad-source
+          mkdir -p app
+          cp -R /tmp/narad-source/Ab-main/app/. app/
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
+
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
+
       - name: Build debug APK
         env:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
-          # Jobs isi repo ki docs/jobs.json se (raw link commit ke turant baad update hota hai; repo PUBLIC rakhein)
           JOBS_URL: ${{ vars.JOBS_URL || format('https://raw.githubusercontent.com/{0}/{1}/{2}/docs/jobs.json', github.repository_owner, github.event.repository.name, github.event.repository.default_branch) }}
         run: gradle assembleDebug
+
       - uses: actions/upload-artifact@v4
         with:
           name: NaradAI-debug-apk
