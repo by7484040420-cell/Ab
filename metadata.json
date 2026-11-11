@@ -3,5 +3,7 @@
   "description": "Sarkari bharti, admit card, result, IRCTC train ticket booking, official portal search, aur AI auto-form filler.",
   "prompt": "Rewrite Narad AI Android app to a full-featured React application with automated form filling, ticket booking assistant, CAPTCHA/OTP handover, profile locker, and official portal directory.",
   "permissions": [],
-  "capabilities": []
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

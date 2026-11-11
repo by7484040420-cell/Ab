@@ -7,10 +7,23 @@
     <meta name="description" content="Sarkari bharti, admit card, result, IRCTC train ticket booking, official portal search, aur AI auto-form filler." />
     <meta property="og:title" content="Narad AI - Sarkari Form & Ticket Auto-Filler" />
     <meta property="og:description" content="Sarkari bharti, admit card, result, IRCTC train ticket booking, official portal search, aur AI auto-form filler." />
+    <meta name="theme-color" content="#14213D" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e53935'/><text x='50' y='68' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='sans-serif'>N</text></svg>" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
   </head>
   <body class="bg-[#f5f7fb] text-[#14213d] antialiased selection:bg-blue-100 selection:text-blue-900">
     <div id="root"></div>

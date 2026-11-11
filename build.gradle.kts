@@ -1,11 +1,4 @@
-// Build file for NaradAI
-tasks.register("assembleDebug") {
-    doLast {
-        println("Build succeeded")
-    }
-}
-tasks.register("lintDebug") {
-    doLast {
-        println("Lint succeeded")
-    }
+plugins {
+    id("com.android.application") version "8.5.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.24" apply false
 }

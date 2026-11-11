@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AppHeader } from './components/AppHeader';
 import { HomeView } from './components/HomeView';
 import { WorkScreen } from './components/WorkScreen';
 import { ChatView } from './components/ChatView';
 import { ProfileView } from './components/ProfileView';
 import { SettingsView } from './components/SettingsView';
+import { AppInstallModal } from './components/AppInstallModal';
 import { Portal, UserProfile, AiConfig } from './types';
-import { pIrctc } from './data/portals';
+import { pAfms, pIrctc, pPan, pSsc, pUpsc, pDl } from './data/portals';
 import { defaultProfile } from './utils/formFillEngine';
-import { getSavedAiConfig, defaultAiConfig } from './utils/aiService';
+import { getSavedAiConfig } from './utils/aiService';
 
 export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<'home' | 'work' | 'chat' | 'profile' | 'settings'>('home');
-  const [selectedPortal, setSelectedPortal] = useState<Portal>(pIrctc);
+  const [selectedPortal, setSelectedPortal] = useState<Portal>(pAfms);
+  const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
   const [userProfile, setUserProfile] = useState<UserProfile>(() => {
     try {
       const saved = localStorage.getItem('narad_user_profile');
@@ -24,13 +26,13 @@ export const App: React.FC = () => {
   const [aiConfig, setAiConfig] = useState<AiConfig>(getSavedAiConfig);
   const [chatInitialQuery, setChatInitialQuery] = useState<string>('');
 
-  // Persist profile
+  // Persist profile to localStorage only
   const handleSaveProfile = (updated: UserProfile) => {
     setUserProfile(updated);
     try {
       localStorage.setItem('narad_user_profile', JSON.stringify(updated));
     } catch {
-      // storage quota or private mode
+      // safe fallback
     }
   };
 
@@ -48,11 +50,12 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f7fb] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#f5f7fb] dark:bg-[#0b1324] text-[#14213d] dark:text-[#f5f7fb] flex flex-col font-sans transition-colors duration-200">
       <AppHeader
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
         selectedPortalName={selectedPortal?.name}
+        onOpenInstallModal={() => setIsInstallModalOpen(true)}
       />
 
       <main className="flex-1 pb-10">
@@ -97,6 +100,13 @@ export const App: React.FC = () => {
           />
         )}
       </main>
+
+      {/* Android Native APK Package Download & Install Modal */}
+      <AppInstallModal
+        isOpen={isInstallModalOpen}
+        onClose={() => setIsInstallModalOpen(false)}
+        userProfile={userProfile}
+      />
     </div>
   );
 };

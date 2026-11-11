@@ -4,7 +4,7 @@ export const extraHosts = [
   'irctc.co.in', 'mudra.org.in', 'jansamarth.in', 'standupmitra.in', 'licindia.in',
   'sbpdcl.co.in', 'nbpdcl.co.in', 'nta.ac.in', 'nptel.ac.in', 'upmsp.edu.in',
   'slprbassam.in', 'tgprb.in', 'manipurpolice.org', 'ibps.in', 'sbi.co.in', 'rbi.org.in',
-  'cdac.in', 'aiimsexams.ac.in', 'cbse.gov.in', 'uksssc.in'
+  'cdac.in', 'aiimsexams.ac.in', 'cbse.gov.in', 'uksssc.in', 'amcsscentry.gov.in'
 ];
 
 export function isAllowed(url: string): boolean {
@@ -21,6 +21,7 @@ export function isAllowed(url: string): boolean {
 }
 
 // Popular Portals
+export const pAfms: Portal = { name: 'AFMS Join (Armed Forces Medical Services)', url: 'https://amcsscentry.gov.in', keys: ['afms', 'armed forces', 'medical services', 'military nurse'], note: 'Armed Forces Medical Services' };
 export const pAadhaar: Portal = { name: 'Aadhaar Card (UIDAI)', url: 'https://myaadhaar.uidai.gov.in', keys: ['aadhaar', 'aadhar', 'adhar', 'uidai'], note: 'Download / Update / PVC Card' };
 export const pPan: Portal = { name: 'PAN Card (Instant e-PAN)', url: 'https://eportal.incometax.gov.in/iec/foservices/#/pre-login/instant-e-pan', keys: ['pan', 'instant pan', 'e-pan'], note: 'Free Instant e-PAN' };
 export const pIrctc: Portal = { name: 'IRCTC (Train Ticket Booking)', url: 'https://www.irctc.co.in', keys: ['irctc', 'train', 'ticket', 'railway ticket', 'tatkal'], note: 'Tatkal & General Ticket' };
@@ -345,9 +346,22 @@ export const allUpdates: Portal[] = [
   { name: 'Rojgar Mela (NCS)', url: 'https://www.ncs.gov.in', keys: ['rojgar mela'], note: 'Job Fair Updates' }
 ];
 
+export const verifiedOfficialPortals: Portal[] = [
+  pAfms,
+  pIrctc,
+  pPan,
+  pSsc,
+  pUpsc,
+  pDl,
+  pPassport,
+  pVoter,
+  pRrb,
+  pIncomeCert
+];
+
 export const popularPortals: Portal[] = [
-  pAadhaar, pPan, pIrctc, pVoter, pPassport, pDl, pRation,
-  pIncomeCert, pCasteCert, pResidenceCert, pBirthCert, pEpf, pGst, pItr, pNcs, pUmang, pDigi
+  pAfms, pAadhaar, pPan, pIrctc, pVoter, pPassport, pDl, pRation,
+  pIncomeCert, pCasteCert, pResidenceCert, pBirthCert, pEpf, pGst, pItr, pNcs, pUmang, pDigi, pUpsc, pSsc
 ];
 
 export const allPortals: Portal[] = Array.from(

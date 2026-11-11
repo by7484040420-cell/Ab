@@ -1,4 +1,4 @@
-import { UserProfile, FillReportItem } from '../types';
+import { UserProfile } from '../types';
 
 export const INDIA_STATES = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana',
@@ -23,10 +23,23 @@ export const defaultProfile: UserProfile = {
   category: 'obc',
   marital: 'single',
   education: 'Graduate (B.Sc Computer Science, 2020)',
+  aadhaar: '567812344321',
   aadhaar_last4: '4321',
-  photo_name: 'rahul_passport_photo.jpg',
-  signature_name: 'rahul_signature.png',
-  marksheet_name: '10th_marksheet.pdf'
+  pan_number: 'ABCDE1234F',
+  voter_id: 'BR0102312345',
+  blood_group: 'B+',
+  board_10th: 'BSEB Patna',
+  roll_10th: '201402891',
+  marks_10th: '82.4%',
+  passing_year_10th: '2014',
+  board_12th: 'BSEB Patna',
+  roll_12th: '201604128',
+  marks_12th: '79.6%',
+  stream_12th: 'Science (PCM)',
+  passing_year_12th: '2016',
+  college_name: 'Patna Science College, Patna University',
+  graduation_degree: 'B.Sc Computer Science',
+  graduation_marks: '78.2%'
 };
 
 export function validateProfile(profile: Partial<UserProfile>): { validData: Record<string, string>; errors: string[] } {
@@ -137,148 +150,28 @@ export function validateProfile(profile: Partial<UserProfile>): { validData: Rec
   const mar = v('marital');
   if (['single', 'married'].includes(mar)) validData['marital'] = mar;
 
-  return { validData, errors };
-}
+  // Education
+  const edu = v('education');
+  if (edu) validData['education'] = edu;
 
-// Generate a Bookmarklet code for official websites
-export function generateBookmarkletCode(profile: UserProfile): string {
-  const profileJson = JSON.stringify({
-    naam: profile.naam,
-    pita: profile.pita,
-    mata: profile.mata,
-    janm: profile.janm,
-    mobile: profile.mobile,
-    email: profile.email,
-    pata: profile.pata,
-    pincode: profile.pincode,
-    gender: profile.gender,
-    rajya: profile.rajya,
-    jila: profile.jila,
-    category: profile.category,
-    marital: profile.marital
+  // Aadhaar (12 digits)
+  const aadh = v('aadhaar').replace(/[\s-]/g, '');
+  if (aadh) {
+    if (/^\d{12}$/.test(aadh)) {
+      validData['aadhaar'] = aadh;
+      validData['aadhaar_last4'] = aadh.slice(-4);
+    } else {
+      errors.push('Aadhaar number 12 ank ka hona chahiye.');
+    }
+  }
+
+  // Extra attributes pass-through
+  ['pan_number', 'voter_id', 'blood_group', 'board_10th', 'roll_10th', 'marks_10th', 'passing_year_10th',
+   'board_12th', 'roll_12th', 'marks_12th', 'stream_12th', 'passing_year_12th', 'college_name',
+   'graduation_degree', 'graduation_marks'].forEach((k) => {
+    const val = v(k as keyof UserProfile);
+    if (val) validData[k] = val;
   });
 
-  return `javascript:(function(){
-    var P = ${profileJson};
-    var rules = [
-      {k:'naam', r:/\\b(full name|name|naam|applicant|candidate)\\b|नाम/i, neg:/father|mother|spouse|city/i},
-      {k:'pita', r:/father|pita|guardian|पिता/i, neg:/mother|mobile|email/i},
-      {k:'mata', r:/mother|mata|माता/i, neg:/father|mobile/i},
-      {k:'mobile', r:/mobile|phone|contact|मोबाइल/i, neg:/alt|emergency|parent/i},
-      {k:'email', r:/e?mail|ईमेल/i, neg:/alt|parent/i},
-      {k:'pincode', r:/pin ?code|zip|पिन/i, neg:/otp|security/i},
-      {k:'pata', r:/address|pata|पता/i, neg:/email|ip/i}
-    ];
-    var filled = 0;
-    document.querySelectorAll('input:not([type=hidden]):not([type=submit]), textarea').forEach(function(el){
-      var meta = ((el.name||'')+' '+(el.id||'')+' '+(el.placeholder||'')+' '+(el.title||'')).toLowerCase();
-      if(/captcha|otp|password/i.test(meta)) return;
-      for(var i=0; i<rules.length; i++){
-        var rule = rules[i];
-        if(rule.r.test(meta) && !rule.neg.test(meta) && P[rule.k]){
-          el.value = P[rule.k];
-          el.style.backgroundColor = '#dcfce7';
-          el.style.border = '2px solid #22c55e';
-          el.dispatchEvent(new Event('input', {bubbles:true}));
-          el.dispatchEvent(new Event('change', {bubbles:true}));
-          filled++;
-          break;
-        }
-      }
-    });
-    alert('Narad AI: ' + filled + ' field auto-fill ho gaye!\\nAb aap CAPTCHA aur OTP enter kijiye.');
-  })();`;
-}
-
-// Generate the Fill Report based on User Profile
-export function simulateAutoFill(profile: UserProfile, formType: string): {
-  report: FillReportItem[];
-  filledCount: number;
-  otpRequired: boolean;
-  fieldsFilled: Record<string, string>;
-} {
-  const report: FillReportItem[] = [];
-  const fieldsFilled: Record<string, string> = {};
-
-  if (profile.naam) {
-    report.push({ k: 'naam', st: 'ok', msg: `Naam: "${profile.naam}" safaltapoorvak bhara gaya.` });
-    fieldsFilled['naam'] = profile.naam;
-  } else {
-    report.push({ k: 'naam', st: 'warn', msg: 'Naam profile me khali tha.' });
-  }
-
-  if (profile.pita) {
-    report.push({ k: 'pita', st: 'ok', msg: `Pita ka naam: "${profile.pita}" safaltapoorvak bhara.` });
-    fieldsFilled['pita'] = profile.pita;
-  }
-
-  if (profile.mata) {
-    report.push({ k: 'mata', st: 'ok', msg: `Mata ka naam: "${profile.mata}" bhara gaya.` });
-    fieldsFilled['mata'] = profile.mata;
-  }
-
-  if (profile.janm) {
-    const [y, m, d] = profile.janm.split('-');
-    report.push({ k: 'janm', st: 'ok', msg: `Janm tithi: "${d}/${m}/${y}" date field me set ho gaya.` });
-    fieldsFilled['janm'] = `${d}/${m}/${y}`;
-  }
-
-  if (profile.mobile) {
-    report.push({ k: 'mobile', st: 'ok', msg: `Mobile: "${profile.mobile}" bhara gaya (OTP isi par aayega).` });
-    fieldsFilled['mobile'] = profile.mobile;
-  }
-
-  if (profile.email) {
-    report.push({ k: 'email', st: 'ok', msg: `Email: "${profile.email}" verify form me set kiya gaya.` });
-    fieldsFilled['email'] = profile.email;
-  }
-
-  if (profile.gender) {
-    report.push({ k: 'gender', st: 'ok', msg: `Gender: "${profile.gender === 'male' ? 'Purush (Male)' : profile.gender === 'female' ? 'Mahila (Female)' : 'Anya'}" radio/dropdown select ho gaya.` });
-    fieldsFilled['gender'] = profile.gender;
-  }
-
-  if (profile.category) {
-    report.push({ k: 'category', st: 'ok', msg: `Category: "${profile.category.toUpperCase()}" reservation category select ho gayi.` });
-    fieldsFilled['category'] = profile.category.toUpperCase();
-  }
-
-  if (profile.rajya) {
-    report.push({ k: 'rajya', st: 'ok', msg: `Rajya: "${profile.rajya}" state dropdown me select hua.` });
-    fieldsFilled['rajya'] = profile.rajya;
-  }
-
-  if (profile.jila) {
-    report.push({ k: 'jila', st: 'ok', msg: `Jila: "${profile.jila}" district dropdown me set hua.` });
-    fieldsFilled['jila'] = profile.jila;
-  }
-
-  if (profile.pincode) {
-    report.push({ k: 'pincode', st: 'ok', msg: `Pincode: "${profile.pincode}" set hua.` });
-    fieldsFilled['pincode'] = profile.pincode;
-  }
-
-  if (profile.pata) {
-    report.push({ k: 'pata', st: 'ok', msg: `Pata: "${profile.pata}" permanent address me bhara.` });
-    fieldsFilled['pata'] = profile.pata;
-  }
-
-  // Ticket booking / Exam specific
-  if (formType.includes('IRCTC')) {
-    report.push({ k: 'ticket', st: 'ok', msg: 'Passenger 1: Age, Berth Preference, Senior Citizen quota mapped.' });
-    report.push({ k: 'insurance', st: 'ok', msg: 'Travel Insurance option "Yes" select kiya gaya.' });
-    report.push({ k: 'otp', st: 'warn', msg: 'IRCTC Security: CAPTCHA image & Bank Payment OTP bas aap enter karenge.' });
-  } else {
-    report.push({ k: 'declare', st: 'ok', msg: 'Terms & Conditions / Declaration box tick kar diya gaya.' });
-    report.push({ k: 'otp', st: 'warn', msg: 'Form Security: Image CAPTCHA aur Mobile OTP user verify karenge.' });
-  }
-
-  const okCount = report.filter(r => r.st === 'ok').length;
-
-  return {
-    report,
-    filledCount: okCount,
-    otpRequired: true,
-    fieldsFilled
-  };
+  return { validData, errors };
 }
